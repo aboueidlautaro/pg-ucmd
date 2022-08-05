@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import NavLinks from "./NavLinks";
 
 function Navbar() {
   return (
@@ -10,18 +11,10 @@ function Navbar() {
             LOGO UCMD
           </h2>
           <ul className="flex justify-center">
-            <li className="mx-2 hover:scale-105 transition-all">
-              <NavLink to="/">Inicio</NavLink>
-            </li>
-            <li className="mx-2 hover:scale-105 transition-all">
-              <NavLink to="/simulacion">Simular monotributo</NavLink>
-            </li>
-            <li className="mx-2 hover:scale-105 transition-all">
-              <NavLink to="/faq">Dudas/Consultas</NavLink>
-            </li>
-            <li className="mx-2 hover:scale-105 transition-all">
-              <NavLink to="/inscripcion">Inscripción al monotributo</NavLink>
-            </li>
+            <NavLinks to="/" title="Inicio" />
+            <NavLinks to="/simulacion" title="Simular monotributo" />
+            <NavLinks to="/faq" title="Dudas/Consultas" />
+            <NavLinks to="/inscripcion" title="Inscripción monotributo" />
           </ul>
           <button className="bg-blanco-perla px-3 py-1 rounded-md text-grafito font-medium">
             Contacto
