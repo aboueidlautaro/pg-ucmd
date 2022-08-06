@@ -1,11 +1,14 @@
 import React from "react";
-import GalleryIg from "../components/GalleryIg";
 
 function Home() {
   return (
-    <div>
-      <GalleryIg />
-    </div>
+    <>
+      <div className="h-screen bg-green-200">
+        <h2>asdasd</h2>
+      </div>
+      <div className="h-screen bg-red-200"></div>
+      <div className="h-screen bg-blue-200"></div>
+    </>
   );
 }
 
