@@ -12,14 +12,13 @@ function Navbar() {
   const [isActive, setActive] = useState("false");
 
   const visible =
-    "text-lg flex flex-col justify-center items-center delay-150 transition-all ease-out";
+    "h-40 sm:h40 bg-rosa-pastel text-lg flex flex-col justify-center items-center delay-150 transition-all ease-out ";
   const visible2 =
-    "h-40 sm:h-20 w-full bg-rosa-pastel delay-150 transition-all ease-out";
+    "h-40 sm:h-40 w-full bg-rosa-pastel delay-150 transition-all ease-out md:h-40 lg:hidden";
   const invisible2 = "hidden delay-150 transition-all ease-in";
 
-  const hPrimary =
-    "h-40 sm:h-20 w-full bg-rosa-pastel delay-150 transition-all ";
-  const hSecondary = "h-80 sm:h-20 w-full bg-rosa-pastel";
+  const hPrimary = "sm:h-20 w-full bg-rosa-pastel delay-150 transition-all ";
+  const hSecondary = "h-20 w-full bg-rosa-pastel ";
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -28,7 +27,7 @@ function Navbar() {
   return (
     <>
       <div className={isActive ? hPrimary : hSecondary}>
-        <div className="mx-auto w-full sm:w-9/12 flex h-40 flex-col sm:flex-row justify-center sm:h-20 sm:justify-between items-center ">
+        <div className="mx-auto w-full sm:w-9/12 flex h-40 flex-col sm:flex-row justify-center sm:h-20 sm:justify-between items-center bg-rosa-pastel">
           <Link to="/">
             <img
               className="w-40 hover:scale-105 transition-all linear"
