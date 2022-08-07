@@ -12,13 +12,16 @@ function Navbar() {
   const [isActive, setActive] = useState("false");
 
   const visible =
-    "h-40 sm:h40 bg-rosa-pastel text-lg flex flex-col justify-center items-center delay-150 transition-all ease-out ";
+    "h-40 sm:h40 bg-rosa-pastel text-lg flex flex-col justify-center items-center";
   const visible2 =
-    "h-40 sm:h-40 w-full bg-rosa-pastel delay-150 transition-all ease-out md:h-40 lg:hidden";
-  const invisible2 = "hidden delay-150 transition-all ease-in";
+    "h-40 sm:h-40 w-full bg-rosa-pastel md:h-40 lg:hidden transition-all delay-150 ease-in-out";
+  const invisible2 = "hidden";
 
-  const hPrimary = "sm:h-20 w-full bg-rosa-pastel delay-150 transition-all ";
-  const hSecondary = "h-20 w-full bg-rosa-pastel ";
+  const hPrimary = "sm:h-20 w-full bg-rosa-pastel";
+  const hSecondary = "h-20 w-full bg-rosa-pastel";
+
+  const headerActive = "sticky top-0 h-80 sm:h-60 lg:h-20";
+  const headerInactive = "sticky top-0";
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -26,7 +29,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0">
+      <header className={isActive ? headerInactive : headerActive}>
         <div className={isActive ? hPrimary : hSecondary}>
           <div className="mx-auto w-full sm:w-9/12 flex h-40 flex-col sm:flex-row justify-center sm:h-20 sm:justify-between items-center bg-rosa-pastel">
             <Link to="/">
