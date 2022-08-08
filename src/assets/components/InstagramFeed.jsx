@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import jeison from "../static/json/TestAPI.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper";
 
 function InstagramFeed() {
   const [publicaciones, setPublicaciones] = useState([]);
@@ -10,7 +14,34 @@ function InstagramFeed() {
   //});
   //}, []);
 
-  return <></>;
+  return (
+    <>
+      <div className="my-8 py-6 rounded-lg bg-rosa-pastel shadow-md shadow-grafito-claro/60">
+        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+          {jeison.data.map((value, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <div className="flex justify-center items-center">
+                  <a
+                    href={value.permalink}
+                    className="h-[450px]  sm:h-96 w-full flex sm:flex-row flex-col justify-start sm:justify-center items-center"
+                  >
+                    <img
+                      className="shadow-md shadow-grafito-claro/60 rounded-md max-w-72 max-h-72 sm:max-w-96 sm:w-96 sm:h-full sm:max-h-full mx-2"
+                      src={value.media_url}
+                    />
+                    <p className="text-[#303030] font-medium mx-2 max-h-1/3 sm:max-h-96 w-full inline-block text-ellipsis">
+                      {value.caption}
+                    </p>
+                  </a>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </>
+  );
 }
 
 export default InstagramFeed;
