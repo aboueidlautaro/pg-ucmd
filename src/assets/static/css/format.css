@@ -51,3 +51,27 @@ img {
   -webkit-align-items: center;
   align-items: center;
 }
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: white !important;
+}
+
+.textOverflow {
+  margin-top: 25px !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+@media (min-width: 640px) {
+  .textOverflow {
+    margin-top: 0px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 13 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
