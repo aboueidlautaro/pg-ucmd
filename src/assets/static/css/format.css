@@ -6,6 +6,9 @@
 html {
   background-color: #fff3f3;
 }
+.ArrowButton__ButtonWrapper {
+  background-color: white;
+}
 
 .active {
   padding: 0.25rem 0.75rem;
