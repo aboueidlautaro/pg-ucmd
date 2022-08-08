@@ -39,7 +39,7 @@ function InstagramFeed() {
                       className="shadow-md shadow-grafito-claro/60 rounded-md max-w-72 max-h-72 sm:max-w-96 sm:w-96 sm:h-full sm:max-h-full mx-2"
                       src={value.media_url}
                     />
-                    <p className="textOverflow  mt-3 sm:mt-0 text-[#303030] font-medium mx-2 max-h-1/3 sm:max-h-96 w-full inline-block text-ellipsis ...  ">
+                    <p className="sm:px-24 textOverflow text-justify mt-3 sm:mt-0 text-[#303030] font-medium mx-2 max-h-1/3 sm:max-h-96 w-full inline-block text-ellipsis ...  ">
                       {value.caption}
                     </p>
                   </a>

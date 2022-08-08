@@ -69,7 +69,7 @@ img {
   .textOverflow {
     margin-top: 0px !important;
     display: -webkit-box !important;
-    -webkit-line-clamp: 13 !important;
+    -webkit-line-clamp: 9 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
