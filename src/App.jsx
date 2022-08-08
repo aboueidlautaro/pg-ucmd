@@ -8,6 +8,7 @@ import Simulacion from "./assets/routes/Simulacion";
 import Faq from "./assets/routes/Faq";
 import Inscripcion from "./assets/routes/Inscripcion";
 import Contact from "./assets/routes/Contact";
+import Footer from "./assets/components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="inscripcion" element={<Inscripcion />} />
         <Route path="contacto" element={<Contact />} />
       </Routes>
+
+      <Footer />
     </Router>
   );
 }

@@ -40,7 +40,10 @@ function Navbar() {
               />
             </Link>
 
-            <ul id="ul-1" className="hidden lg:flex justify-center text-white">
+            <ul
+              id="ul-1"
+              className="hidden lg:flex justify-center text-white items-center text-center"
+            >
               <NavLinks to="/" title="Inicio" />
               <NavLinks to="/simulacion" title="Simular monotributo" />
               <NavLinks to="/faq" title="Dudas/Consultas" />
@@ -48,7 +51,7 @@ function Navbar() {
             </ul>
 
             <div className="mt-4 sm:mt-0 flex justify-center items-center">
-              <button className="active:scale-95 hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-grafito font-medium">
+              <button className="active:scale-95 hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-[#776868] font-bold">
                 <Link to="/contacto">Contacto</Link>
               </button>
               <button
