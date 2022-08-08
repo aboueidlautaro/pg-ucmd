@@ -1,8 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import jeison from "../static/json/TestAPI.json";
 import Carousel from "better-react-carousel";
-import { Link } from "react-router-dom";
 
 function InstagramFeed() {
   const [publicaciones, setPublicaciones] = useState([]);
@@ -16,7 +14,14 @@ function InstagramFeed() {
   return (
     <>
       <div className="my-8 py-6 rounded-lg bg-rosa-pastel shadow-md shadow-grafito-claro/60">
-        <Carousel cols={1} rows={1} gap={10} loop>
+        <Carousel
+          arrowLeft={"A"}
+          arrowRight={"B"}
+          cols={1}
+          rows={1}
+          gap={10}
+          loop
+        >
           {jeison.data.map((value, index) => {
             return (
               <Carousel.Item>
