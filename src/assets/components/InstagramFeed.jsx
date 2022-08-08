@@ -17,10 +17,9 @@ function InstagramFeed() {
         <Carousel cols={1} rows={1} gap={10} loop>
           {jeison.data.map((value, index) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={index}>
                 <div className="flex justify-center items-center">
                   <a
-                    key={index}
                     href={value.permalink}
                     className="h-[450px]  sm:h-96 w-full flex sm:flex-row flex-col justify-start sm:justify-center items-center"
                   >

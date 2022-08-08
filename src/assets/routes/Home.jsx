@@ -1,5 +1,6 @@
 import React from "react";
 import InstagramFeed from "../components/InstagramFeed";
+import styled from "styled-components";
 
 function Home() {
   return (
