@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
 * {
-  font-family: "Roboto";
+  font-family: "Roboto" !important;
 }
 
 html {
@@ -9,16 +9,20 @@ html {
 
 .active {
   padding: 0.25rem 0.75rem;
-  background-color: #fff3f3;
+  background-color: #998484;
   border-radius: 6px;
   transform: none !important;
 }
 .active:hover {
   padding: 0.25rem 0.75rem !important;
-  background-color: #fff3f3 !important;
+  background-color: #998484 !important;
   border-radius: 6px !important;
   transform: none !important;
 }
 a {
   user-select: none;
+}
+
+img {
+  display: inline-block !important;
 }

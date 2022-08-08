@@ -7,6 +7,7 @@ import Home from "./assets/routes/Home";
 import Simulacion from "./assets/routes/Simulacion";
 import Faq from "./assets/routes/Faq";
 import Inscripcion from "./assets/routes/Inscripcion";
+import Contact from "./assets/routes/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="simulacion" element={<Simulacion />} />
         <Route path="faq" element={<Faq />} />
         <Route path="inscripcion" element={<Inscripcion />} />
+        <Route path="contacto" element={<Contact />} />
       </Routes>
     </Router>
   );

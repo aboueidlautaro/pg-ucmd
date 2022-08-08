@@ -18,6 +18,7 @@ module.exports = {
         hueso: "#c2b19c",
         "blanco-perla": "#fff3f3",
         grafito: "#525252",
+        "grafito-claro": "#6B6B6B",
       },
     },
   },

@@ -14,14 +14,14 @@ function Navbar() {
   const visible =
     "h-40 sm:h40 bg-rosa-pastel text-lg flex flex-col justify-center items-center";
   const visible2 =
-    "h-40 sm:h-40 w-full bg-rosa-pastel md:h-40 lg:hidden transition-all delay-150 ease-in-out";
+    "h-40 sm:h-40 w-full bg-rosa-pastel md:h-40 lg:hidden transition-all delay-150 ease-in-out text-white";
   const invisible2 = "hidden";
 
   const hPrimary = "sm:h-20 w-full bg-rosa-pastel";
   const hSecondary = "h-20 w-full bg-rosa-pastel";
 
-  const headerActive = "sticky top-0 h-80 sm:h-60 lg:h-20";
-  const headerInactive = "sticky top-0";
+  const headerActive = "sticky top-0 h-80 sm:h-60 lg:h-20 z-[100000]";
+  const headerInactive = "sticky top-0 z-[100000]";
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -40,7 +40,7 @@ function Navbar() {
               />
             </Link>
 
-            <ul id="ul-1" className="hidden lg:flex justify-center">
+            <ul id="ul-1" className="hidden lg:flex justify-center text-white">
               <NavLinks to="/" title="Inicio" />
               <NavLinks to="/simulacion" title="Simular monotributo" />
               <NavLinks to="/faq" title="Dudas/Consultas" />
@@ -48,8 +48,8 @@ function Navbar() {
             </ul>
 
             <div className="mt-4 sm:mt-0 flex justify-center items-center">
-              <button className="hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-grafito font-medium">
-                Contacto
+              <button className="active:scale-95 hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-grafito font-medium">
+                <Link to="/contacto">Contacto</Link>
               </button>
               <button
                 onClick={handleToggle}
