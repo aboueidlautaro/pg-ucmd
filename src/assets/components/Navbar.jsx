@@ -51,9 +51,12 @@ function Navbar() {
             </ul>
 
             <div className="mt-4 sm:mt-0 flex justify-center items-center">
-              <button className="active:scale-95 hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-[#776868] font-bold">
-                <Link to="/contacto">Contacto</Link>
-              </button>
+              <Link to="/contacto">
+                <button className="active:scale-95 hover:bg-blanco-perla/80 mx-2 bg-blanco-perla px-3 py-1 rounded-md text-[#776868] font-bold">
+                  Contacto
+                </button>
+              </Link>
+
               <button
                 onClick={handleToggle}
                 className="lg:hidden hover:bg-blanco-perla/80 flex items-center mx-2 bg-blanco-perla px-3 py-2 rounded-md"

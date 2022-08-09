@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </div>
         <div className="w-full bg-rosa-pastel h-16">
-          <p className="h-auto mx-auto border-t-2 rounded-lg border-grafito/20 shadow-gray-900/10 shadow-sm border-blanco-perla w-24 text-center bg-rosa-pastel font-roboto">
+          <p className="h-auto mx-auto border-t-2 rounded-lg border-grafito/20 shadow-gray-900/10 w-24 text-center bg-rosa-pastel font-roboto">
             Design{" "}
             <a className=" font-bold" href="https://bydizeid.com">
               @ByDizeid
