@@ -9,6 +9,7 @@ import Faq from "./assets/routes/Faq";
 import Inscripcion from "./assets/routes/Inscripcion";
 import Contact from "./assets/routes/Contact";
 import Footer from "./assets/components/Footer";
+import NotFound from "./assets/routes/NotFound";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="faq" element={<Faq />} />
         <Route path="inscripcion" element={<Inscripcion />} />
         <Route path="contacto" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
