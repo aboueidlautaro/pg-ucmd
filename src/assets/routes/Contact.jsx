@@ -14,9 +14,17 @@ function Contact() {
       <div className="text-grafito mt-8 mx-auto w-11/12 sm:w-9/12 text-center">
         <form className="flex flex-col">
           <LabelField text="Nombre" />
-          <InputField name="nombre" placeholder="Ingrese su nombre" />
+          <InputField
+            type="text"
+            name="nombre"
+            placeholder="Ingrese su nombre"
+          />
           <LabelField text="Asunto" />
-          <InputField name="nombre" placeholder="Ingrese un asunto" />
+          <InputField
+            type="text"
+            name="nombre"
+            placeholder="Ingrese un asunto"
+          />
           <LabelField text="Consulta" />
           <textarea
             className="focus:ring-0 placeholder:text-center border-none rounded-lg shadow-sm shadow-grafito/30"
