@@ -30,6 +30,10 @@ function FormMonotributoCalc() {
   };
 
   const [valor, setValor] = useState("");
+  const [valorImpuesto, setValorImpuesto] = useState("");
+  const [valorJub, setValorJub] = useState("");
+  const [valorObso, setValorObso] = useState("");
+
   const ingresoA = 748382;
   const ingresoB = 1112459;
   const ingresoC = 1557443;
@@ -61,12 +65,184 @@ function FormMonotributoCalc() {
     setActividad(e.target.elements.actividad.value);
     setSended(true);
 
-    if (ingreso === 0) {
+    if (ingreso != null && ingreso === 1) {
+      setValor("Por favor, introduzca un valor");
+    } else if (ingreso === 0) {
       setValor("Por favor, confirme nuevamente su consulta");
-    } else if (ingreso < ingresoA) {
+    } else if (ingreso < ingresoA && ingreso > 1) {
+      {
+        checked ? setValorImpuesto("$ 288,07") : null;
+      }
       setValor("$ 3.334,24");
     } else if (ingreso > ingresoA && ingreso < ingresoB) {
+      {
+        checked ? setValorImpuesto("$ 555,02") : null;
+      }
       setValor("$ 3.728,29");
+    } else if (
+      ingreso > ingresoB &&
+      ingreso < ingresoC &&
+      actividad === servicio
+    ) {
+      {
+        alquiler > 0
+          ? setValorImpuesto("$ 949,02")
+          : setValorImpuesto("Introduzca un valor");
+      }
+      setValor("$ 4.262,11");
+    } else if (
+      ingreso > ingresoB &&
+      ingreso < ingresoC &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 876,97") : null;
+      }
+      setValor("$ 4.190,06");
+    } else if (
+      ingreso > ingresoC &&
+      ingreso < ingresoD &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("$ 1.559,09") : null;
+      }
+      setValor("$ 5.025,96");
+    } else if (
+      ingreso > ingresoC &&
+      ingreso < ingresoD &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 1.440,47") : null;
+      }
+      setValor("$ 4.907,34");
+    } else if (
+      ingreso > ingresoD &&
+      ingreso < ingresoE &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("$ 2.965,66") : null;
+      }
+      setValor("$ 6.601,71");
+    } else if (
+      ingreso > ingresoD &&
+      ingreso < ingresoE &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 2.300,50") : null;
+      }
+      setValor("$ 5.936,55");
+    } else if (
+      ingreso > ingresoE &&
+      ingreso < ingresoF &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("$ 4.079,93") : null;
+      }
+      setValor("$ 7.902,06");
+    } else if (
+      ingreso > ingresoE &&
+      ingreso < ingresoF &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 3.003,79") : null;
+      }
+      setValor("$ 6.825,92");
+    } else if (
+      ingreso > ingresoF &&
+      ingreso < ingresoG &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("$ 5.189,94") : null;
+      }
+      setValor("$ 9.216,76");
+    } else if (
+      ingreso > ingresoF &&
+      ingreso < ingresoG &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 3.745,19") : null;
+      }
+      setValor("$ 7.772,01");
+    } else if (
+      ingreso > ingresoG &&
+      ingreso < ingresoH &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("$ 11.862,69") : null;
+      }
+      setValor("$ 16.114,67");
+    } else if (
+      ingreso > ingresoG &&
+      ingreso < ingresoH &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 9.193,62") : null;
+      }
+      setValor("$ 13.445,60");
+    } else if (
+      ingreso > ingresoH &&
+      ingreso < ingresoI &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 14.828,38") : null;
+      }
+      setValor("$ 19.328,05");
+    } else if (
+      ingreso > ingresoH &&
+      ingreso < ingresoI &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("No corresponde") : null;
+      }
+      setValor("No corresponde");
+    } else if (
+      ingreso > ingresoI &&
+      ingreso < ingresoJ &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("No corresponde") : null;
+      }
+      setValor("No corresponde");
+    } else if (
+      ingreso > ingresoI &&
+      ingreso < ingresoJ &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 17.425,48") : null;
+      }
+      setValor("$ 22.197,62");
+    } else if (
+      ingreso > ingresoJ &&
+      ingreso < ingresoK &&
+      actividad === muebles
+    ) {
+      {
+        checked ? setValorImpuesto("$ 20.018,33") : null;
+      }
+      setValor("$ 25.090,13");
+    } else if (
+      ingreso > ingresoJ &&
+      ingreso < ingresoK &&
+      actividad === servicio
+    ) {
+      {
+        checked ? setValorImpuesto("No corresponde") : null;
+      }
+      setValor("No corresponde");
     }
   };
 
@@ -78,7 +254,21 @@ function FormMonotributoCalc() {
             <p>Cuota mensual: </p>
             <p>{valor}</p>
           </div>
-          <p className="my-4 text-center">Composición de la cuota</p>
+          <p className="my-4 font-extrabold text-center">
+            Composición de la cuota
+          </p>
+          <div className="flex justify-between text-grafito mt-8 mx-auto w-full text-center">
+            <p>Impuestos: </p>
+            <p>{valorImpuesto}</p>
+          </div>
+          <div className="flex justify-between text-grafito mt-3 mx-auto w-full text-center">
+            <p>Aportes jubilatorios: </p>
+            <p>{valorJub}</p>
+          </div>
+          <div className="flex justify-between text-grafito mt-3 mx-auto w-full text-center">
+            <p>Obra Social: </p>
+            <p>{valorObso}</p>
+          </div>
         </div>
       ) : null}
       <div className="text-grafito mt-8 mx-auto w-10/12 sm:w-6/12 lg:w-4/12 text-center">
