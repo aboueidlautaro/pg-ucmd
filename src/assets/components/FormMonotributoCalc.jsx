@@ -12,22 +12,14 @@ function FormMonotributoCalc() {
   ];
 
   const [sended, setSended] = useState(false);
-
+  const [categoria, setCategoria] = useState("");
   const [ingreso, setIngreso] = useState(0);
-  const [alquiler, setAlquiler] = useState(0);
+  const [alquilerr, setAlquiler] = useState(0);
   const [energia, setEnergia] = useState(0);
   const [superficie, setSuperficie] = useState(0);
   const [actividad, setActividad] = useState("");
 
-  const [checked, setChecked] = useState(false);
-
-  const checkYes = () => {
-    setChecked(true);
-  };
-
-  const checkNo = () => {
-    setChecked(false);
-  };
+  const alquiler = alquilerr * 12;
 
   const [valor, setValor] = useState("");
   const [valorImpuesto, setValorImpuesto] = useState("");
@@ -46,203 +38,186 @@ function FormMonotributoCalc() {
   const ingresoJ = 5425770;
   const ingresoK = 6019594;
 
+  const energiaA = 3330;
+  const energiaB = 5000;
+  const energiaC = 5000;
+  const energiaD = 6700;
+  const energiaE = 10000;
+  const energiaF = 13000;
+  const energiaG = 16500;
+  const energiaH = 20000;
+  const energiaI = 20000;
+  const energiaJ = 20000;
+  const energiaK = 20000;
+
+  const superficieA = 30;
+  const superficieB = 45;
+  const superficieC = 60;
+  const superficieD = 85;
+  const superficieE = 110;
+  const superficieF = 150;
+  const superficieG = 200;
+  const superficieH = 200;
+  const superficieI = 200;
+  const superficieJ = 200;
+  const superficieK = 200;
+
+  const alquilerA = 133455;
+  const alquilerB = 133455;
+  const alquilerC = 266911;
+  const alquilerD = 266911;
+  const alquilerE = 332579;
+  const alquilerF = 333638;
+  const alquilerG = 400366;
+  const alquilerH = 533822;
+  const alquilerI = 533822;
+  const alquilerJ = 533822;
+  const alquilerK = 533822;
+
   const servicio = "Servicios";
   const muebles = "Venta de cosas muebles";
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    {
-      if (checked === true) {
-        setAlquiler(e.target.elements.alquiler.value),
-          setEnergia(e.target.elements.energia.value),
-          setSuperficie(e.target.elements.superficie.value);
-      } else {
-        null;
-      }
-    }
+    setAlquiler(e.target.elements.alquiler.value);
+
+    setEnergia(e.target.elements.energia.value);
+
+    setSuperficie(e.target.elements.superficie.value);
+
     setIngreso(e.target.ingresos.value);
+
     setActividad(e.target.elements.actividad.value);
+
     setSended(true);
 
+    //validacion para introducir un valor
     if (ingreso != null && ingreso === 1) {
       setValor("Por favor, introduzca un valor");
-    } else if (ingreso === 0) {
+    } //validacion por confirmación de form
+    else if (ingreso === 0) {
       setValor("Por favor, confirme nuevamente su consulta");
-    } else if (ingreso < ingresoA && ingreso > 1) {
-      {
-        checked ? setValorImpuesto("$ 288,07") : null;
-      }
+      setValorImpuesto("Cargando valor...");
+      setValorJub("Cargando valor...");
+      setValorObso("Cargando valor...");
+    } //validacion por si no se ingresó un tipo de actividad
+    else if (ingreso > 0 && actividad === "Seleccione su actividad") {
+      setCategoria("Seleccione una actividad");
+      setValor("Seleccione una actividad");
+      setValorImpuesto("Seleccione una actividad");
+      setValorJub("Seleccione una actividad");
+      setValorObso("Seleccione una actividad");
+    } //validacion para categoría A
+    else if (
+      (ingreso < ingresoA &&
+        superficie <= superficieA &&
+        energia <= energiaA &&
+        alquiler <= alquilerA &&
+        actividad === servicio) ||
+      (ingreso < ingresoA &&
+        superficie <= superficieA &&
+        energia <= energiaA &&
+        alquiler <= alquilerA)
+    ) {
+      setCategoria("A");
       setValor("$ 3.334,24");
-    } else if (ingreso > ingresoA && ingreso < ingresoB) {
-      {
-        checked ? setValorImpuesto("$ 555,02") : null;
-      }
+      setValorImpuesto("$ 288,07");
+      setValorJub("$ 1.270,99");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría B en SERVICIO
+    else if (
+      ingreso < ingresoB &&
+      alquiler <= alquilerB &&
+      energia <= energiaB &&
+      superficie <= superficieB
+    ) {
+      setCategoria("B");
       setValor("$ 3.728,29");
-    } else if (
-      ingreso > ingresoB &&
-      ingreso < ingresoC &&
-      actividad === servicio
+      setValorImpuesto("$ 555,02");
+      setValorJub("$ 1.398,09");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría B en MUEBLES
+    else if (
+      ingreso < ingresoB &&
+      alquiler <= alquilerB &&
+      energia <= energiaB &&
+      superficie <= superficieB
     ) {
+      setCategoria("B");
+      setValor("$ 3.728,29");
+      setValorImpuesto("$ 555,02");
+      setValorJub("$ 1.398,09");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría C en SERVICIO
+    else if (
+      ingreso < ingresoC &&
+      alquiler <= alquilerC &&
+      energia <= energiaC &&
+      superficie <= superficieC
+    ) {
+      setCategoria("C");
+
       {
-        alquiler > 0
+        actividad === servicio
           ? setValorImpuesto("$ 949,02")
-          : setValorImpuesto("Introduzca un valor");
+          : setValorImpuesto("$ 876,97");
       }
-      setValor("$ 4.262,11");
-    } else if (
-      ingreso > ingresoB &&
+      {
+        actividad === servicio
+          ? setValorImpuesto("$ 949,02")
+          : setValorImpuesto("$ 876,97");
+      }
+
+      setValorJub("$ 1.537,91");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría C en MUEBLES
+    else if (
       ingreso < ingresoC &&
-      actividad === muebles
+      superficie <= superficieC &&
+      energia <= energiaC &&
+      alquiler <= alquilerC
     ) {
-      {
-        checked ? setValorImpuesto("$ 876,97") : null;
-      }
+      setCategoria("C");
       setValor("$ 4.190,06");
-    } else if (
-      ingreso > ingresoC &&
+      setValorImpuesto("$ 876,97");
+      setValorJub("$ 1.537,91");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría D en SERVICIO
+    else if (
       ingreso < ingresoD &&
-      actividad === servicio
+      superficie <= superficieD &&
+      energia <= energiaD &&
+      alquiler <= alquilerD
     ) {
-      {
-        checked ? setValorImpuesto("$ 1.559,09") : null;
-      }
+      setCategoria("D");
       setValor("$ 5.025,96");
-    } else if (
+      setValorImpuesto("$ 1.559,09");
+      setValorJub("$ 1.691,69");
+      setValorObso("$ 1.775,18");
+    } //validacion para categoría D en MUEBLES
+    else if (
       ingreso > ingresoC &&
       ingreso < ingresoD &&
-      actividad === muebles
+      superficie > superficieC &&
+      superficie <= superficieD &&
+      energia > energiaC &&
+      energia <= energiaD &&
+      alquiler > alquilerC &&
+      alquiler <= alquilerD
     ) {
-      {
-        checked ? setValorImpuesto("$ 1.440,47") : null;
-      }
+      setCategoria("D");
       setValor("$ 4.907,34");
-    } else if (
-      ingreso > ingresoD &&
-      ingreso < ingresoE &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("$ 2.965,66") : null;
-      }
-      setValor("$ 6.601,71");
-    } else if (
-      ingreso > ingresoD &&
-      ingreso < ingresoE &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 2.300,50") : null;
-      }
-      setValor("$ 5.936,55");
-    } else if (
-      ingreso > ingresoE &&
-      ingreso < ingresoF &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("$ 4.079,93") : null;
-      }
-      setValor("$ 7.902,06");
-    } else if (
-      ingreso > ingresoE &&
-      ingreso < ingresoF &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 3.003,79") : null;
-      }
-      setValor("$ 6.825,92");
-    } else if (
-      ingreso > ingresoF &&
-      ingreso < ingresoG &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("$ 5.189,94") : null;
-      }
-      setValor("$ 9.216,76");
-    } else if (
-      ingreso > ingresoF &&
-      ingreso < ingresoG &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 3.745,19") : null;
-      }
-      setValor("$ 7.772,01");
-    } else if (
-      ingreso > ingresoG &&
-      ingreso < ingresoH &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("$ 11.862,69") : null;
-      }
-      setValor("$ 16.114,67");
-    } else if (
-      ingreso > ingresoG &&
-      ingreso < ingresoH &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 9.193,62") : null;
-      }
-      setValor("$ 13.445,60");
-    } else if (
-      ingreso > ingresoH &&
-      ingreso < ingresoI &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 14.828,38") : null;
-      }
-      setValor("$ 19.328,05");
-    } else if (
-      ingreso > ingresoH &&
-      ingreso < ingresoI &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("No corresponde") : null;
-      }
-      setValor("No corresponde");
-    } else if (
-      ingreso > ingresoI &&
-      ingreso < ingresoJ &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("No corresponde") : null;
-      }
-      setValor("No corresponde");
-    } else if (
-      ingreso > ingresoI &&
-      ingreso < ingresoJ &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 17.425,48") : null;
-      }
-      setValor("$ 22.197,62");
-    } else if (
-      ingreso > ingresoJ &&
-      ingreso < ingresoK &&
-      actividad === muebles
-    ) {
-      {
-        checked ? setValorImpuesto("$ 20.018,33") : null;
-      }
-      setValor("$ 25.090,13");
-    } else if (
-      ingreso > ingresoJ &&
-      ingreso < ingresoK &&
-      actividad === servicio
-    ) {
-      {
-        checked ? setValorImpuesto("No corresponde") : null;
-      }
-      setValor("No corresponde");
+      setValorImpuesto("$ 1.440,47");
+      setValorJub("$ 1.691,69");
+      setValorObso("$ 1.775,18");
+    } //validacion para cuando no se cumplan las condiciones de arriba
+    else {
+      setCategoria("Entró al else");
+      setValor("Entró al else");
+      setValorImpuesto("Entró al else");
+      setValorJub("Entró al else");
+      setValorObso("Entró al else");
     }
   };
 
@@ -251,23 +226,27 @@ function FormMonotributoCalc() {
       {sended ? (
         <div className="text-grafito font-semibold mx-auto w-11/12 max-w-[420px]">
           <div className="flex justify-between text-grafito mt-8 mx-auto w-full text-center">
+            <p>Categoría: </p>
+            <p className="font-bold">{categoria}</p>
+          </div>
+          <div className="flex justify-between text-grafito mt-8 mx-auto w-full text-center">
             <p>Cuota mensual: </p>
-            <p>{valor}</p>
+            <p className="font-bold">{valor}</p>
           </div>
           <p className="my-4 font-extrabold text-center">
             Composición de la cuota
           </p>
           <div className="flex justify-between text-grafito mt-8 mx-auto w-full text-center">
             <p>Impuestos: </p>
-            <p>{valorImpuesto}</p>
+            <p className="font-bold">{valorImpuesto}</p>
           </div>
           <div className="flex justify-between text-grafito mt-3 mx-auto w-full text-center">
             <p>Aportes jubilatorios: </p>
-            <p>{valorJub}</p>
+            <p className="font-bold">{valorJub}</p>
           </div>
           <div className="flex justify-between text-grafito mt-3 mx-auto w-full text-center">
             <p>Obra Social: </p>
-            <p>{valorObso}</p>
+            <p className="font-bold">{valorObso}</p>
           </div>
         </div>
       ) : null}
@@ -287,28 +266,12 @@ function FormMonotributoCalc() {
             placeholder="Ingresos mensuales"
           />
           <LabelField text="¿Cuenta con local comercial u oficina?" />
-          <div className="my-3 flex justify-evenly w-12 mx-auto items-center">
-            <input
-              className="text-rosa-pastel focus:ring-0 mx-1"
-              type="radio"
-              name="check"
-              value="yes"
-              onClick={checkYes}
-            />
-            <LabelField text="Si" />
+          <label className="text-md">
+            Dejar en blanco si la respuesta es no.
+          </label>
 
-            <input
-              required
-              className="text-rosa-pastel focus:ring-0 mx-1"
-              type="radio"
-              name="check"
-              value="no"
-              onClick={checkNo}
-            />
-            <LabelField text="No" />
-          </div>
-          {checked ? (
-            <div className="text-right">
+          <div className="mt-3 text-center flex flex-col mx-auto">
+            <div>
               <LabelField text="Costo alquiler mensual en pesos" />
               <InputField
                 id="alquiler"
@@ -317,6 +280,8 @@ function FormMonotributoCalc() {
                 placeholder="0.00"
                 required
               />
+            </div>
+            <div>
               <LabelField text="Consumo energía mensual (KWs)" />
               <InputField
                 id="energia"
@@ -325,6 +290,8 @@ function FormMonotributoCalc() {
                 placeholder="0.00"
                 required
               />
+            </div>
+            <div>
               <LabelField text="Superficie en m2" />
               <InputField
                 id="superficie"
@@ -334,7 +301,7 @@ function FormMonotributoCalc() {
                 required
               />
             </div>
-          ) : null}
+          </div>
 
           <select
             className="focus:ring-0 mb-4  border-none rounded-lg shadow-sm shadow-grafito/30"
