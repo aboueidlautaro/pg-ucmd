@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <div className="w-full absolute text-gray-800">
-        <div className="w-full h-40 absolute z-50 text-center bottom-72">
+        <div className="w-full h-18 absolute z-50 text-center bottom-72">
           <div className="flex justify-center items-center">
             <span
               id="grosorLinea"
@@ -20,7 +20,7 @@ function Footer() {
             <span className="inline-block w-full border-b-2 border-[#ffe6ef] "></span>
           </div>
 
-          <div className="flex justify-center items-center mt-5">
+          <div className="flex justify-center items-center mt-4">
             <ButtonBrand href="http://www.google.com" icon={faWhatsapp} />
             <ButtonBrand href="http://www.google.com" icon={faInstagram} />
           </div>
@@ -30,7 +30,7 @@ function Footer() {
           className="text-grafito mt-16 h-24 relative bottom-0 z-0"
         ></div>
         <div className="bg-rosa-pastel">
-          <div className="bg-rosa-pastel h-72 items-center sm:w-8/12 flex flex-col sm:flex-row justify-evenly mx-auto text-center">
+          <div className="bg-rosa-pastel h-48 items-center sm:w-8/12 flex flex-col sm:flex-row justify-evenly mx-auto text-center">
             <div className="sm:w-1/3">
               <p className="mx-auto w-10/12 font-semibold">
                 {" "}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import NavLinks from "./NavLinks";
 
-import Logo from "../static/images/logo.png";
+import Logo from "../static/images/na.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +34,7 @@ function Navbar() {
           <div className="mx-auto w-full sm:w-9/12 flex h-40 flex-col sm:flex-row justify-center sm:h-20 sm:justify-between items-center bg-rosa-pastel">
             <Link to="/">
               <img
-                className="w-40 hover:scale-105 transition-all linear"
+                className="w-32 h-auto hover:scale-105 transition-all linear items-center"
                 src={Logo}
                 alt=""
               />
