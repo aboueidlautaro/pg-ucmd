@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
+import { Link } from "react-router-dom";
 
 import InputField from "./InputField";
 import LabelField from "./LabelField";
@@ -388,6 +389,14 @@ function FormMonotributoCalc() {
           <div className="flex justify-between text-grafito mt-3 mx-auto w-full text-center">
             <p>Obra Social: </p>
             <p className="font-bold">{valorObso}</p>
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              className="text-blanco-perla rounded-md bg-rosa-pastel p-3"
+              to="/contacto"
+            >
+              Recategorizar
+            </Link>
           </div>
         </div>
       ) : null}
