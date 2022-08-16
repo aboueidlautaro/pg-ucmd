@@ -20,8 +20,9 @@ function Navbar() {
   const hPrimary = "sm:h-20 w-full bg-rosa-pastel";
   const hSecondary = "h-20 w-full bg-rosa-pastel";
 
-  const headerActive = "sticky top-0 h-80 sm:h-60 lg:h-20 z-[100000]";
-  const headerInactive = "sticky top-0 z-[100000]";
+  const headerActive =
+    "sticky top-0 h-80 sm:h-60 lg:h-20 z-[100000] shadow-md shadow-gray";
+  const headerInactive = "sticky top-0 z-[100000] shadow-md shadow-gray";
 
   const handleToggle = () => {
     setActive(!isActive);

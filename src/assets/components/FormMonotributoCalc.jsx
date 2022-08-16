@@ -13,12 +13,13 @@ function FormMonotributoCalc() {
 
   const [sended, setSended] = useState(false);
   const [categoria, setCategoria] = useState("");
-  const [ingreso, setIngreso] = useState(0);
+  const [ingresoo, setIngreso] = useState(0);
   const [alquilerr, setAlquiler] = useState(0);
   const [energia, setEnergia] = useState(0);
   const [superficie, setSuperficie] = useState(0);
   const [actividad, setActividad] = useState("");
 
+  const ingreso = ingresoo * 12;
   const alquiler = alquilerr * 12;
 
   const [valor, setValor] = useState("");
@@ -397,7 +398,7 @@ function FormMonotributoCalc() {
           id="form"
           onSubmit={onSubmit}
         >
-          <LabelField text="¿Cuánto ganás por mes?" />
+          <LabelField text="Ingreso estimativo mensual" />
           <InputField
             required
             id="ingresos"
